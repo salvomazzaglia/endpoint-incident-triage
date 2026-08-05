@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CustodyRecord",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sequence",
+    "event_id",
+    "event_type",
+    "occurred_at_utc",
+    "actor_label",
+    "action",
+    "package_id",
+    "previous_record_hash",
+    "record_hash"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "event_id": { "type": "string" },
+    "event_type": { "type": "string" },
+    "occurred_at_utc": { "type": "string" },
+    "actor_label": { "type": "string" },
+    "action": { "type": "string" },
+    "package_id": { "type": "string" },
+    "details": { "type": "object" },
+    "previous_record_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "record_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  },
+  "additionalProperties": false
+}

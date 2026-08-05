@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CollectionMetadata",
+  "type": "object",
+  "required": ["schema_version", "collection_id", "started_at_utc", "profile", "platform", "source_mode"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "collection_id": { "type": "string" },
+    "started_at_utc": { "type": "string" },
+    "completed_at_utc": { "type": ["string", "null"] },
+    "profile": { "enum": ["minimal", "standard"] },
+    "platform": { "type": "string" },
+    "source_mode": { "enum": ["live", "synthetic", "fixture"] },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

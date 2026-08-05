@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "record_type": "recent_file",
+      "path": "/tmp/synthetic-example/agent",
+      "name": "agent",
+      "size_bytes": 8192,
+      "modified_time_utc": "2026-08-05T17:55:00.000Z",
+      "owner": "synthetic-user"
+    },
+    {
+      "record_type": "collection_summary",
+      "since_utc": "2026-08-04T18:00:00.000Z",
+      "collected": 1
+    }
+  ]
+}

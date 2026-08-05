@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "tool": {
+    "name": "endpoint-incident-triage",
+    "version": "1.0.0"
+  },
+  "defaults": {
+    "profile": "standard",
+    "platform": "auto",
+    "since_hours": 24,
+    "include_optional": true,
+    "include_command_lines": false,
+    "include_event_messages": false,
+    "collector_timeout_seconds": 180,
+    "maximum_output_bytes": 5242880,
+    "max_event_count": 200,
+    "max_recent_files": 50,
+    "max_recent_file_depth": 2,
+    "max_hash_file_bytes": 1048576
+  },
+  "privacy": {
+    "report_mode": "masked",
+    "hash_salt_env": "EIT_HASH_SALT"
+  },
+  "collection": {
+    "fixture_env_var": "EIT_FIXTURE_FILE",
+    "fixture_flag": "--fixture"
+  },
+  "safety": {
+    "refuse_overwrite": true,
+    "refuse_system_sensitive_output": true,
+    "refuse_output_inside_collectors": true,
+    "never_self_elevate": true,
+    "allow_live_collection": false
+  },
+  "paths": {
+    "collector_registry": "config/collector-registry.json",
+    "collection_profiles": "config/collection-profiles.json",
+    "triage_rules": "config/triage-rules.json",
+    "collectors_root": "collectors"
+  },
+  "profiles": {
+    "active": "standard"
+  },
+  "synthetic": {
+    "enabled": true,
+    "fixture_root": "fixtures",
+    "demo_mode": true
+  }
+}

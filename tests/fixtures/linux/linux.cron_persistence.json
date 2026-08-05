@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "artifact_type": "autorun",
+      "record_type": "cron_file",
+      "path": "/etc/cron.d/synthetic-demo",
+      "entry": "0 3 * * * synthetic-service /opt/synthetic/maint.sh",
+      "recently_created": false
+    },
+    {
+      "artifact_type": "autorun",
+      "record_type": "user_crontab",
+      "user": "synthetic-user",
+      "entry": "*/15 * * * * /home/synthetic-user/bin/synthetic-check.sh"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "record_type": "auth_event",
+      "event_type": "accepted_publickey",
+      "user": "synthetic-user",
+      "source_address": "198.51.100.20",
+      "time_utc": "2026-08-05T08:00:00.000Z"
+    },
+    {
+      "record_type": "auth_event",
+      "event_type": "failed_password",
+      "user": "synthetic-unknown",
+      "source_address": "203.0.113.30",
+      "time_utc": "2026-08-05T09:15:00.000Z"
+    },
+    {
+      "record_type": "auth_event_summary",
+      "since_utc": "2026-08-04T18:00:00.000Z",
+      "accepted_count": 1,
+      "failed_count": 1
+    }
+  ]
+}

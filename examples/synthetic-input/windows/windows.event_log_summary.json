@@ -1,0 +1,36 @@
+{
+  "records": [
+    {
+      "record_type": "event_log_entry",
+      "log_name": "Security",
+      "event_id": 4624,
+      "level": "Information",
+      "provider": "Microsoft-Windows-Security-Auditing",
+      "time_created_utc": "2026-08-05T17:30:00.000Z",
+      "machine": "SYNTHETIC-ENDPOINT-01"
+    },
+    {
+      "record_type": "event_log_entry",
+      "log_name": "Security",
+      "event_id": 4625,
+      "level": "Information",
+      "provider": "Microsoft-Windows-Security-Auditing",
+      "time_created_utc": "2026-08-05T17:31:00.000Z",
+      "machine": "SYNTHETIC-ENDPOINT-01"
+    },
+    {
+      "record_type": "event_log_summary",
+      "log_name": "Security",
+      "since_utc": "2026-08-04T18:00:00.000Z",
+      "max_events": 200,
+      "collected": 2
+    },
+    {
+      "record_type": "event_log_summary",
+      "log_name": "System",
+      "since_utc": "2026-08-04T18:00:00.000Z",
+      "max_events": 200,
+      "collected": 0
+    }
+  ]
+}

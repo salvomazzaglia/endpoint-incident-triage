@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Collection profile definitions for endpoint-incident-triage.",
+  "profiles": {
+    "minimal": {
+      "description": "Fast, low-impact triage covering core context, execution, network, and security posture.",
+      "include_standard_collectors": false,
+      "include_optional_collectors": false,
+      "recommended_for": [
+        "initial scoping",
+        "remote constrained environments",
+        "high-volatility endpoints"
+      ]
+    },
+    "standard": {
+      "description": "Extended triage including persistence mechanisms, WMI/cron, SSH metadata, and optional filesystem metadata.",
+      "include_standard_collectors": true,
+      "include_optional_collectors": false,
+      "recommended_for": [
+        "suspected persistence",
+        "lateral movement review",
+        "post-compromise scoping"
+      ]
+    }
+  },
+  "platform_defaults": {
+    "windows": {
+      "minimal_collector_count": 10,
+      "standard_collector_count": 12
+    },
+    "linux": {
+      "minimal_collector_count": 8,
+      "standard_collector_count": 11
+    }
+  },
+  "ordering": {
+    "strategy": "volatility_order",
+    "description": "Collectors run ascending by volatility_order to capture ephemeral state first."
+  }
+}

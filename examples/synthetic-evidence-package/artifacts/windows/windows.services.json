@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.services",
+  "platform": "windows",
+  "category": "persistence",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 0,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 2,
+  "records": [
+    {
+      "artifact_type": "service",
+      "record_type": "service",
+      "name": "WinDefend",
+      "display_name": "Synthetic Windows Defender Service",
+      "state": "Running",
+      "start_mode": "Auto",
+      "path_name": "\"C:\\Program Files\\Windows Defender\\MsMpEng.exe\"",
+      "service_account": "LocalSystem",
+      "binary_dir_writable": false
+    },
+    {
+      "artifact_type": "service",
+      "record_type": "service",
+      "name": "SynEvilSvc",
+      "display_name": "Synthetic Writable Service Example",
+      "state": "Stopped",
+      "start_mode": "Manual",
+      "path_name": "\"C:\\Users\\synthetic-user\\AppData\\Local\\synthetic-writable\\evil-svc.exe\" --synthetic",
+      "service_account": "synthetic-service",
+      "binary_dir_writable": true,
+      "recently_created": true
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/services.ps1",
+    "fixture=windows.services.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

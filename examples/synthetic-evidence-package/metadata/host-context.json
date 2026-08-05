@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "target_label": "SYNTHETIC-ENDPOINT-01",
+  "platform": "windows",
+  "source_mode": "synthetic"
+}

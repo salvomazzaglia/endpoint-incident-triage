@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "artifact_type": "scheduled_task",
+      "record_type": "scheduled_task",
+      "task_name": "SyntheticMaintenance",
+      "task_path": "\\Synthetic\\",
+      "state": "Ready",
+      "author": "SYNTHETIC\\synthetic-admin",
+      "description": "Synthetic maintenance task for demonstration",
+      "execute": "C:\\Windows\\System32\\synthetic-maint.exe",
+      "arguments": "/quiet",
+      "execute_exists": true,
+      "last_run_time_utc": "2026-08-05T03:00:00.000Z",
+      "next_run_time_utc": "2026-08-06T03:00:00.000Z"
+    },
+    {
+      "artifact_type": "scheduled_task",
+      "record_type": "scheduled_task",
+      "task_name": "SyntheticMissingTarget",
+      "task_path": "\\Synthetic\\",
+      "state": "Ready",
+      "author": "SYNTHETIC\\synthetic-user",
+      "description": "Synthetic task with missing executable target",
+      "execute": "C:\\Temp\\synthetic-missing\\not-present.exe",
+      "arguments": null,
+      "execute_exists": false,
+      "last_run_time_utc": null,
+      "next_run_time_utc": "2026-08-06T06:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Feature request
+description: Suggest an enhancement for endpoint-incident-triage
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Features that require memory acquisition, disk imaging, credential extraction,
+        remote execution, EDR bypass, or automated containment need explicit design
+        review and are out of scope for the default v1.0 roadmap.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What incident-response or triage problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: checkboxes
+    id: defensive
+    attributes:
+      label: Defensive design
+      options:
+        - label: This feature remains non-destructive and authorized-use only
+          required: true
+        - label: No real endpoint data is required to demonstrate it
+          required: true
+        - label: Synthetic fixtures can cover tests and documentation
+          required: true

@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "findings": [
+    {
+      "id": "30d2e533-9b8f-4409-b933-7af615c0705b",
+      "rule_id": "wmi_permanent_subscription",
+      "title": "Unknown WMI permanent event subscription",
+      "description": "A permanent WMI event subscription was observed.",
+      "severity": "High",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "2",
+      "rationale": "Permanent WMI subscriptions are uncommon and historically used for persistence.",
+      "recommendation": "Validate filter/consumer legitimacy and change control records.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "wmi"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.wmi_persistence.json"
+    },
+    {
+      "id": "8982f407-e01d-4a1b-8693-412e0fe6b268",
+      "rule_id": "writable_service_binary_path",
+      "title": "Service executable in unexpected writable location",
+      "description": "A service references an executable whose directory appears writable by non-administrators.",
+      "severity": "High",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "SynEvilSvc",
+      "rationale": "Writable service binary directories enable persistence via binary replacement.",
+      "recommendation": "Validate directory ACLs and recent modifications in the service path.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "service"
+      ],
+      "advisory_wording": "Potentially suspicious",
+      "source_artifact": "artifacts/windows/windows.services.json"
+    },
+    {
+      "id": "80078961-afb6-4e86-908e-217a31113b65",
+      "rule_id": "autorun_missing_target",
+      "title": "Autorun entry references missing target",
+      "description": "A Run key or startup folder entry references a file that is not present.",
+      "severity": "Medium",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "SyntheticGhost",
+      "rationale": "Broken autorun entries can reflect removed malware or incomplete cleanup.",
+      "recommendation": "Correlate with recent file metadata and login timelines.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "autorun"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.autoruns.json"
+    },
+    {
+      "id": "76038757-0867-4e16-9184-8a99f5ca0109",
+      "rule_id": "process_from_temp_path",
+      "title": "Process executing from temporary directory",
+      "description": "A running process image path resides under a temporary or user-writable directory.",
+      "severity": "Medium",
+      "platform": "windows",
+      "artifact_type": "execution",
+      "entity_id": "4512",
+      "rationale": "Legitimate software rarely runs persistently from temp paths; this may indicate staging.",
+      "recommendation": "Review process parent chain, signer metadata, and network connections for the same PID.",
+      "references": [
+        "NIST SP 800-61 Rev. 3"
+      ],
+      "tags": [
+        "execution",
+        "temp-path"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.processes.json"
+    },
+    {
+      "id": "b86be21b-9c49-4d96-9bcc-9363d23fee7d",
+      "rule_id": "scheduled_task_missing_target",
+      "title": "Scheduled task references missing executable",
+      "description": "A scheduled task action points to a path that does not exist.",
+      "severity": "Medium",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "1",
+      "rationale": "Missing task targets may indicate cleanup after execution or dormant tasks.",
+      "recommendation": "Inspect task definition and last run times.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "scheduled-task"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.scheduled_tasks.json"
+    },
+    {
+      "id": "bae79357-750a-4ab6-a590-e3656f4561b1",
+      "rule_id": "listen_all_interfaces",
+      "title": "Listening service on all interfaces",
+      "description": "A network listener is bound to all interfaces rather than localhost.",
+      "severity": "Low",
+      "platform": "windows",
+      "artifact_type": "network",
+      "entity_id": "1",
+      "rationale": "Broad listeners increase remote exposure; verify intended exposure.",
+      "recommendation": "Map owning process and firewall policy for the listener port.",
+      "references": [],
+      "tags": [
+        "network",
+        "exposure"
+      ],
+      "advisory_wording": "Context-dependent",
+      "source_artifact": "artifacts/windows/windows.network_connections.json"
+    },
+    {
+      "id": "68ff0c3e-4341-45ea-adad-345ab8e8def7",
+      "rule_id": "recent_persistence_metadata",
+      "title": "Recently created persistence metadata",
+      "description": "Persistence metadata indicates a very recent creation timestamp.",
+      "severity": "Informational",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "2",
+      "rationale": "Recent persistence changes deserve timeline correlation during triage.",
+      "recommendation": "Compare creation time with case timeline and change tickets.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "timeline"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.wmi_persistence.json"
+    },
+    {
+      "id": "a1d49711-c820-4167-9250-f4ae9b4f645a",
+      "rule_id": "recent_persistence_metadata",
+      "title": "Recently created persistence metadata",
+      "description": "Persistence metadata indicates a very recent creation timestamp.",
+      "severity": "Informational",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "SynEvilSvc",
+      "rationale": "Recent persistence changes deserve timeline correlation during triage.",
+      "recommendation": "Compare creation time with case timeline and change tickets.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "timeline"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.services.json"
+    },
+    {
+      "id": "d7110384-8ed6-412a-a53c-7020742ebb2e",
+      "rule_id": "recent_persistence_metadata",
+      "title": "Recently created persistence metadata",
+      "description": "Persistence metadata indicates a very recent creation timestamp.",
+      "severity": "Informational",
+      "platform": "windows",
+      "artifact_type": "persistence",
+      "entity_id": "SyntheticGhost",
+      "rationale": "Recent persistence changes deserve timeline correlation during triage.",
+      "recommendation": "Compare creation time with case timeline and change tickets.",
+      "references": [],
+      "tags": [
+        "persistence",
+        "timeline"
+      ],
+      "advisory_wording": "Requires review",
+      "source_artifact": "artifacts/windows/windows.autoruns.json"
+    }
+  ]
+}

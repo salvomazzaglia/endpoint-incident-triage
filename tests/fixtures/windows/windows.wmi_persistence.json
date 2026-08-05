@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "record_type": "wmi_event_filter",
+      "name": "SyntheticFilter",
+      "query": "SELECT * FROM __InstanceModificationEvent WITHIN 60",
+      "query_language": "WQL",
+      "namespace": "root/subscription"
+    },
+    {
+      "record_type": "wmi_event_consumer",
+      "name": "SyntheticConsumer",
+      "class_name": "CommandLineEventConsumer",
+      "namespace": "root/subscription"
+    },
+    {
+      "artifact_type": "wmi_persistence",
+      "record_type": "wmi_filter_consumer_binding",
+      "filter": "SyntheticFilter",
+      "consumer": "SyntheticConsumer",
+      "namespace": "root/subscription",
+      "permanent": true,
+      "recently_created": true
+    }
+  ]
+}

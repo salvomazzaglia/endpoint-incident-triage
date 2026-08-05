@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-08-05T20:52:56Z",
+  "package_id": "case-SYNTHETIC-DEMO-01-20260805T180000Z",
+  "algorithm": "sha256",
+  "entries": [
+    {
+      "relative_path": "README.txt",
+      "size_bytes": 1031,
+      "sha256": "f829f4eefb63978f197ef2096c5c242e78af0429c0e09373b8fbd449d3eb2b7c",
+      "artifact_type": "readme",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.autoruns.json",
+      "size_bytes": 1526,
+      "sha256": "c855b8ee3c39491176b38fa69eac228dafa6bfec98df52119028f84b890c5067",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.autoruns",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.defender_status.json",
+      "size_bytes": 1544,
+      "sha256": "3a62bde10ab7ecd8c9337f9578f69e94f0c1f74673d6713a47419d7449e492ae",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.defender_status",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.event_log_summary.json",
+      "size_bytes": 1814,
+      "sha256": "d72b5973f808e1f1ca76c097236aa20cce8eee83053b8f3579db58fb0f345f6e",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.event_log_summary",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.network_connections.json",
+      "size_bytes": 1763,
+      "sha256": "f1ad4f37828a433a2448bfb6b0036e9d042c5c2b4a79568639d2a3733f94bf8f",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.network_connections",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.processes.json",
+      "size_bytes": 1719,
+      "sha256": "2ab46212b7c8ed66a37a87ed01bda83ebfebd730403376f0276321da75cea2a4",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.processes",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.recent_file_metadata.json",
+      "size_bytes": 1454,
+      "sha256": "cf399fbafb32d1c3c4f631e7d781324e0ddf44ad86da2631af9cfcfbba9bf710",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.recent_file_metadata",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.scheduled_tasks.json",
+      "size_bytes": 1938,
+      "sha256": "9360b23f392d8b49b2df1a1a48743f6f0fdcb94d03586c54882be21821d52e44",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.scheduled_tasks",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.services.json",
+      "size_bytes": 1667,
+      "sha256": "5421b652543e0ffe193d603eefcf4887183afa500e4f0cd463a1b101d85283be",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.services",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.system_context.json",
+      "size_bytes": 1380,
+      "sha256": "8f81c34ede4876b36f748bbddbbbce78a04cd48bdc5556d393aab81a3eafb2c4",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.system_context",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.time_context.json",
+      "size_bytes": 1206,
+      "sha256": "bd95d2fdae43bfa195ea0507c271d2ce06a1c0368f8c26381e24c3482050a596",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.time_context",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.users_sessions.json",
+      "size_bytes": 1546,
+      "sha256": "677d1a8eb399ac90f3a04be188aa954ecd2e771c45b82471b832d0594cfd6311",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.users_sessions",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "artifacts/windows/windows.wmi_persistence.json",
+      "size_bytes": 1560,
+      "sha256": "446c86f42f2f54bab5a2aab578c53854349fcceaecf5e15a42c0be77c360bffb",
+      "artifact_type": "collector_result",
+      "collector_id": "windows.wmi_persistence",
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "custody/custody.jsonl",
+      "size_bytes": 14883,
+      "sha256": "06799115b6302910fcf00b066b66072dbcbeb55a33f47d8ab671bfbaefde9768",
+      "artifact_type": "custody",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "findings/findings.json",
+      "size_bytes": 7319,
+      "sha256": "7165b6ae5947e24f1f4db8cc2ec75846a22e4e4866e61f1637ee367975b7d022",
+      "artifact_type": "findings",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "logs/collector-execution.jsonl",
+      "size_bytes": 3812,
+      "sha256": "1d5fa4c7363b94b53bf6e972d8ea757bed5b04bdc0dcb85368048badc3f24e87",
+      "artifact_type": "log",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "metadata/case.json",
+      "size_bytes": 1029,
+      "sha256": "9f8b24eb655c2f653620d6713172e1da3bddbb4fa619e8665248ac46c5ebc420",
+      "artifact_type": "metadata",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "metadata/collection.json",
+      "size_bytes": 798,
+      "sha256": "e82a3db66e9da46cca8ee17e880fd80ab628e28cf23f714513c91a0c7d94d362",
+      "artifact_type": "metadata",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "metadata/host-context.json",
+      "size_bytes": 136,
+      "sha256": "9959a2ee3f3c1668c93e0650457e7220852d391aad38f2e38d560907ee8cdfa0",
+      "artifact_type": "metadata",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "metadata/tool.json",
+      "size_bytes": 154,
+      "sha256": "960ebb37d72e412fba82b484e947d49aaaee8b83ebd125925ef8be262b110cc5",
+      "artifact_type": "metadata",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "reports/README.txt",
+      "size_bytes": 59,
+      "sha256": "8c8dfbc813321858fa696753ad84047e948708023174c0fcae38f78bc378373c",
+      "artifact_type": "report",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    },
+    {
+      "relative_path": "timeline/timeline.jsonl",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "artifact_type": "timeline",
+      "collector_id": null,
+      "created_at_utc": "2026-08-05T20:52:56Z"
+    }
+  ],
+  "manifest_scope": "package",
+  "excluded_paths": [
+    "manifests/manifest.json",
+    "manifests/SHA256SUMS",
+    "metadata/manifest-hash.json"
+  ],
+  "generator_version": "1.0.0"
+}

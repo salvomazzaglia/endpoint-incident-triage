@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "artifact_type": "service",
+      "record_type": "systemd_service",
+      "unit": "ssh.service",
+      "load_state": "loaded",
+      "active_state": "active",
+      "sub_state": "running",
+      "description": "Synthetic OpenSSH server",
+      "exec_start": "/usr/sbin/sshd -D",
+      "binary_dir_writable": false
+    },
+    {
+      "artifact_type": "service",
+      "record_type": "systemd_service",
+      "unit": "synthetic-writable.service",
+      "load_state": "loaded",
+      "active_state": "inactive",
+      "sub_state": "dead",
+      "description": "Synthetic service with writable binary directory",
+      "exec_start": "/home/synthetic-user/synthetic-writable/evil-svc",
+      "binary_dir_writable": true,
+      "recently_created": true
+    }
+  ]
+}

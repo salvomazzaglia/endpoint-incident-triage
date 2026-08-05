@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Defensive heuristic triage rules. Findings are advisory only and require analyst review.",
+  "advisory_notice": "Rules produce investigative hints, not malware verdicts or clean-endpoint proof.",
+  "rules": [
+    {
+      "id": "process_from_temp_path",
+      "title": "Process executing from temporary directory",
+      "description": "A running process image path resides under a temporary or user-writable directory.",
+      "platform": "any",
+      "artifact_type": "process",
+      "enabled": true,
+      "priority": 10,
+      "severity": "Medium",
+      "conditions": [
+        {
+          "type": "regex",
+          "field": "path",
+          "pattern": "(?i)([\\\\/]Temp[\\\\/]|[\\\\/]tmp[\\\\/]|/var/tmp/|AppData\\\\Local\\\\Temp)"
+        }
+      ],
+      "rationale": "Legitimate software rarely runs persistently from temp paths; this may indicate staging.",
+      "recommendation": "Review process parent chain, signer metadata, and network connections for the same PID.",
+      "references": ["NIST SP 800-61 Rev. 3"],
+      "tags": ["execution", "temp-path"],
+      "advisory_wording": "Requires review"
+    },
+    {
+      "id": "writable_service_binary_path",
+      "title": "Service executable in unexpected writable location",
+      "description": "A service references an executable whose directory appears writable by non-administrators.",
+      "platform": "any",
+      "artifact_type": "service",
+      "enabled": true,
+      "priority": 20,
+      "severity": "High",
+      "conditions": [
+        {"type": "equals", "field": "binary_dir_writable", "value": true}
+      ],
+      "rationale": "Writable service binary directories enable persistence via binary replacement.",
+      "recommendation": "Validate directory ACLs and recent modifications in the service path.",
+      "references": [],
+      "tags": ["persistence", "service"],
+      "advisory_wording": "Potentially suspicious"
+    },
+    {
+      "id": "scheduled_task_missing_target",
+      "title": "Scheduled task references missing executable",
+      "description": "A scheduled task action points to a path that does not exist.",
+      "platform": "windows",
+      "artifact_type": "scheduled_task",
+      "enabled": true,
+      "priority": 30,
+      "severity": "Medium",
+      "conditions": [
+        {"type": "equals", "field": "execute_exists", "value": false}
+      ],
+      "rationale": "Missing task targets may indicate cleanup after execution or dormant tasks.",
+      "recommendation": "Inspect task definition and last run times.",
+      "references": [],
+      "tags": ["persistence", "scheduled-task"],
+      "advisory_wording": "Requires review"
+    },
+    {
+      "id": "autorun_missing_target",
+      "title": "Autorun entry references missing target",
+      "description": "A Run key or startup folder entry references a file that is not present.",
+      "platform": "windows",
+      "artifact_type": "autorun",
+      "enabled": true,
+      "priority": 40,
+      "severity": "Medium",
+      "conditions": [
+        {"type": "equals", "field": "target_exists", "value": false}
+      ],
+      "rationale": "Broken autorun entries can reflect removed malware or incomplete cleanup.",
+      "recommendation": "Correlate with recent file metadata and login timelines.",
+      "references": [],
+      "tags": ["persistence", "autorun"],
+      "advisory_wording": "Requires review"
+    },
+    {
+      "id": "listen_all_interfaces",
+      "title": "Listening service on all interfaces",
+      "description": "A network listener is bound to all interfaces rather than localhost.",
+      "platform": "any",
+      "artifact_type": "network_connection",
+      "enabled": true,
+      "priority": 50,
+      "severity": "Low",
+      "conditions": [
+        {"type": "equals", "field": "listen_all_interfaces", "value": true}
+      ],
+      "rationale": "Broad listeners increase remote exposure; verify intended exposure.",
+      "recommendation": "Map owning process and firewall policy for the listener port.",
+      "references": [],
+      "tags": ["network", "exposure"],
+      "advisory_wording": "Context-dependent"
+    },
+    {
+      "id": "unknown_process_path",
+      "title": "Process with unknown executable path",
+      "description": "A process record lacks a resolvable executable path.",
+      "platform": "any",
+      "artifact_type": "process",
+      "enabled": true,
+      "priority": 60,
+      "severity": "Low",
+      "conditions": [
+        {"type": "path_missing", "field": "path"}
+      ],
+      "rationale": "Missing paths may reflect permissions limits or intentionally obscured binaries.",
+      "recommendation": "Re-collect with elevated rights if authorized, or correlate by PID.",
+      "references": [],
+      "tags": ["execution"],
+      "advisory_wording": "Heuristic match"
+    },
+    {
+      "id": "recent_persistence_metadata",
+      "title": "Recently created persistence metadata",
+      "description": "Persistence metadata indicates a very recent creation timestamp.",
+      "platform": "any",
+      "artifact_type": "any",
+      "enabled": true,
+      "priority": 70,
+      "severity": "Informational",
+      "conditions": [
+        {"type": "equals", "field": "recently_created", "value": true}
+      ],
+      "rationale": "Recent persistence changes deserve timeline correlation during triage.",
+      "recommendation": "Compare creation time with case timeline and change tickets.",
+      "references": [],
+      "tags": ["persistence", "timeline"],
+      "advisory_wording": "Requires review"
+    },
+    {
+      "id": "ssh_authorized_keys_mode",
+      "title": "SSH authorized_keys permission issue",
+      "description": "An authorized_keys file has overly permissive mode bits.",
+      "platform": "linux",
+      "artifact_type": "ssh_key_metadata",
+      "enabled": true,
+      "priority": 80,
+      "severity": "Medium",
+      "conditions": [
+        {"type": "numeric_greater_than", "field": "mode_octal", "minimum": 644}
+      ],
+      "rationale": "Overly permissive authorized_keys modes weaken host authentication controls.",
+      "recommendation": "Confirm ownership and tighten mode to 600 or organizational standard.",
+      "references": [],
+      "tags": ["ssh", "permissions"],
+      "advisory_wording": "Potentially suspicious"
+    },
+    {
+      "id": "wmi_permanent_subscription",
+      "title": "Unknown WMI permanent event subscription",
+      "description": "A permanent WMI event subscription was observed.",
+      "platform": "windows",
+      "artifact_type": "wmi_persistence",
+      "enabled": true,
+      "priority": 90,
+      "severity": "High",
+      "conditions": [
+        {"type": "equals", "field": "permanent", "value": true}
+      ],
+      "rationale": "Permanent WMI subscriptions are uncommon and historically used for persistence.",
+      "recommendation": "Validate filter/consumer legitimacy and change control records.",
+      "references": [],
+      "tags": ["persistence", "wmi"],
+      "advisory_wording": "Requires review"
+    },
+    {
+      "id": "security_tool_unavailable",
+      "title": "Security tool status unavailable",
+      "description": "Expected security-tool status could not be collected.",
+      "platform": "any",
+      "artifact_type": "security_tool",
+      "enabled": true,
+      "priority": 100,
+      "severity": "Informational",
+      "conditions": [
+        {"type": "equals", "field": "available", "value": false}
+      ],
+      "rationale": "Missing security-tool visibility is a collection limitation or local gap.",
+      "recommendation": "Document limitation; re-collect with appropriate privileges if authorized.",
+      "references": [],
+      "tags": ["visibility"],
+      "advisory_wording": "Context-dependent"
+    }
+  ]
+}

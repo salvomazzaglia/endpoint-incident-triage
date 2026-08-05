@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TriageReport",
+  "type": "object",
+  "required": [
+    "tool_name",
+    "schema_version",
+    "generated_at_utc",
+    "package_id",
+    "status",
+    "privacy_mode",
+    "security_notice"
+  ],
+  "properties": {
+    "tool_name": { "type": "string" },
+    "tool_version": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "generated_at_utc": { "type": "string" },
+    "synthetic": { "type": "boolean" },
+    "package_id": { "type": "string" },
+    "status": { "enum": ["Complete", "Partial", "Failed"] },
+    "case_summary": { "type": "object" },
+    "collection_summary": { "type": "object" },
+    "finding_counts": { "type": "object" },
+    "findings": { "type": "array" },
+    "privacy_mode": { "enum": ["masked", "hashed", "full"] },
+    "security_notice": { "type": "string" },
+    "integrity_status": { "type": "string" },
+    "custody_status": { "type": "string" },
+    "exit_code": { "type": "integer" }
+  },
+  "additionalProperties": true
+}

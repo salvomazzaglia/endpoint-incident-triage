@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.users_sessions",
+  "platform": "windows",
+  "category": "identity",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 16,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 3,
+  "records": [
+    {
+      "record_type": "interactive_session",
+      "username": "synthetic-user",
+      "session_id": 1,
+      "state": "Active",
+      "logon_type": "Interactive",
+      "source_address": "192.0.2.10",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "record_type": "logon_session",
+      "username": "synthetic-admin",
+      "logon_id": "0x3e7",
+      "authentication_package": "Negotiate",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "record_type": "service_account_session",
+      "username": "synthetic-service",
+      "session_id": 0,
+      "state": "Service",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/users-sessions.ps1",
+    "fixture=windows.users_sessions.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

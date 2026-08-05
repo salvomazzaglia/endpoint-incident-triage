@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CollectorArtifact",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "collector_id",
+    "platform",
+    "category",
+    "status",
+    "started_at_utc",
+    "completed_at_utc",
+    "record_count",
+    "records"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "collector_id": { "type": "string" },
+    "platform": { "enum": ["windows", "linux"] },
+    "category": { "type": "string" },
+    "status": { "type": "string" },
+    "started_at_utc": { "type": "string" },
+    "completed_at_utc": { "type": "string" },
+    "duration_ms": { "type": "integer" },
+    "record_count": { "type": "integer" },
+    "records": { "type": "array" },
+    "source_mode": { "type": "string" }
+  },
+  "additionalProperties": true
+}

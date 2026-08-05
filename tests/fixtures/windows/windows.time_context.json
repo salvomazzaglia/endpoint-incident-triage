@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "record_type": "time_context",
+      "utc_now": "2026-08-05T18:00:00.000Z",
+      "local_now": "2026-08-05T20:00:00.000+02:00",
+      "timezone_id": "Central Europe Standard Time",
+      "timezone_offset_minutes": 120,
+      "uptime_seconds": 43200,
+      "ntp_sync_status": "synchronized",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ]
+}

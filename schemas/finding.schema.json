@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finding",
+  "type": "object",
+  "required": [
+    "id",
+    "rule_id",
+    "title",
+    "severity",
+    "platform",
+    "advisory_wording"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "rule_id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "severity": {
+      "enum": ["Informational", "Low", "Medium", "High", "Critical"]
+    },
+    "platform": { "type": "string" },
+    "artifact_type": { "type": "string" },
+    "entity_id": { "type": "string" },
+    "rationale": { "type": "string" },
+    "recommendation": { "type": "string" },
+    "references": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "advisory_wording": {
+      "enum": [
+        "Requires review",
+        "Potentially suspicious",
+        "Heuristic match",
+        "Context-dependent"
+      ]
+    },
+    "source_artifact": { "type": "string" }
+  },
+  "additionalProperties": true
+}

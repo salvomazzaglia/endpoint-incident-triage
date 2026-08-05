@@ -1,0 +1,34 @@
+{
+  "records": [
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 4,
+      "name": "System",
+      "session_id": 0,
+      "path": "C:\\Windows\\System32\\ntoskrnl.exe",
+      "parent_pid": 0,
+      "start_time_utc": "2026-08-05T06:00:00.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 892,
+      "name": "svchost",
+      "session_id": 0,
+      "path": "C:\\Windows\\System32\\svchost.exe",
+      "parent_pid": 684,
+      "start_time_utc": "2026-08-05T06:00:05.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 4512,
+      "name": "payload",
+      "session_id": 1,
+      "path": "C:\\Users\\synthetic-user\\AppData\\Local\\Temp\\synthetic-example\\payload.exe",
+      "parent_pid": 1200,
+      "start_time_utc": "2026-08-05T17:55:00.000Z"
+    }
+  ]
+}

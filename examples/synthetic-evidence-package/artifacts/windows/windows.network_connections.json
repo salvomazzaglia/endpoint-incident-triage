@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.network_connections",
+  "platform": "windows",
+  "category": "network",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 0,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 3,
+  "records": [
+    {
+      "artifact_type": "network_connection",
+      "record_type": "tcp_connection",
+      "local_address": "192.0.2.1",
+      "local_port": 49821,
+      "remote_address": "192.0.2.10",
+      "remote_port": 443,
+      "state": "Established",
+      "owning_process": 4512,
+      "creation_time_utc": "2026-08-05T17:56:00.000Z"
+    },
+    {
+      "artifact_type": "network_connection",
+      "record_type": "tcp_connection",
+      "local_address": "0.0.0.0",
+      "local_port": 8080,
+      "remote_address": "0.0.0.0",
+      "remote_port": 0,
+      "state": "Listen",
+      "owning_process": 3300,
+      "listen_all_interfaces": true,
+      "creation_time_utc": "2026-08-05T12:00:00.000Z"
+    },
+    {
+      "artifact_type": "network_connection",
+      "record_type": "udp_endpoint",
+      "local_address": "::",
+      "local_port": 5353,
+      "owning_process": 2100
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/network-connections.ps1",
+    "fixture=windows.network_connections.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

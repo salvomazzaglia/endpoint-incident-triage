@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "artifact_type": "autorun",
+      "record_type": "autorun",
+      "location": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "SyntheticUpdater",
+      "command": "C:\\Program Files\\Synthetic\\updater.exe /check",
+      "source": "registry_run",
+      "target_exists": true
+    },
+    {
+      "artifact_type": "autorun",
+      "record_type": "autorun",
+      "location": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "SyntheticGhost",
+      "command": "C:\\Users\\synthetic-user\\AppData\\Local\\removed\\ghost.exe",
+      "source": "registry_run",
+      "target_exists": false,
+      "recently_created": true
+    }
+  ]
+}

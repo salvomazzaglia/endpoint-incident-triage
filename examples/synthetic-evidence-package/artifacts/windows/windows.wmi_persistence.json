@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.wmi_persistence",
+  "platform": "windows",
+  "category": "persistence",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 16,
+  "privilege_state": "elevated_optional",
+  "source_mode": "fixture",
+  "record_count": 3,
+  "records": [
+    {
+      "record_type": "wmi_event_filter",
+      "name": "SyntheticFilter",
+      "query": "SELECT * FROM __InstanceModificationEvent WITHIN 60",
+      "query_language": "WQL",
+      "namespace": "root/subscription"
+    },
+    {
+      "record_type": "wmi_event_consumer",
+      "name": "SyntheticConsumer",
+      "class_name": "CommandLineEventConsumer",
+      "namespace": "root/subscription"
+    },
+    {
+      "artifact_type": "wmi_persistence",
+      "record_type": "wmi_filter_consumer_binding",
+      "filter": "SyntheticFilter",
+      "consumer": "SyntheticConsumer",
+      "namespace": "root/subscription",
+      "permanent": true,
+      "recently_created": true
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/wmi-persistence.ps1",
+    "fixture=windows.wmi_persistence.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.time_context",
+  "platform": "windows",
+  "category": "context",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 0,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 1,
+  "records": [
+    {
+      "record_type": "time_context",
+      "utc_now": "2026-08-05T18:00:00.000Z",
+      "local_now": "2026-08-05T20:00:00.000+02:00",
+      "timezone_id": "Central Europe Standard Time",
+      "timezone_offset_minutes": 120,
+      "uptime_seconds": 43200,
+      "ntp_sync_status": "synchronized",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/time-context.ps1",
+    "fixture=windows.time_context.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "artifact_type": "security_tool",
+      "record_type": "defender_status",
+      "available": true,
+      "antivirus_enabled": true,
+      "antispyware_enabled": true,
+      "real_time_protection_enabled": true,
+      "on_access_protection_enabled": true,
+      "product_version": "4.18.25070.5-synthetic",
+      "engine_version": "1.1.25070.5-synthetic",
+      "antivirus_signature_age": 1,
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "record_type": "defender_preference",
+      "cloud_protection": 2,
+      "submit_samples_consent": 1,
+      "disable_realtime_monitoring": false,
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ]
+}

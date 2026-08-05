@@ -1,0 +1,34 @@
+{
+  "records": [
+    {
+      "artifact_type": "network_connection",
+      "record_type": "tcp_connection",
+      "local_address": "192.0.2.1",
+      "local_port": 49821,
+      "remote_address": "192.0.2.10",
+      "remote_port": 443,
+      "state": "Established",
+      "owning_process": 4512,
+      "creation_time_utc": "2026-08-05T17:56:00.000Z"
+    },
+    {
+      "artifact_type": "network_connection",
+      "record_type": "tcp_connection",
+      "local_address": "0.0.0.0",
+      "local_port": 8080,
+      "remote_address": "0.0.0.0",
+      "remote_port": 0,
+      "state": "Listen",
+      "owning_process": 3300,
+      "listen_all_interfaces": true,
+      "creation_time_utc": "2026-08-05T12:00:00.000Z"
+    },
+    {
+      "artifact_type": "network_connection",
+      "record_type": "udp_endpoint",
+      "local_address": "::",
+      "local_port": 5353,
+      "owning_process": 2100
+    }
+  ]
+}

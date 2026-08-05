@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 1,
+      "name": "systemd",
+      "user": "root",
+      "path": "/usr/lib/systemd/systemd",
+      "start_time_utc": "2026-08-05T06:00:00.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 8842,
+      "name": "agent",
+      "user": "synthetic-user",
+      "path": "/tmp/synthetic-example/agent",
+      "start_time_utc": "2026-08-05T17:55:00.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 2200,
+      "name": "sshd",
+      "user": "root",
+      "path": "/usr/sbin/sshd",
+      "start_time_utc": "2026-08-05T06:00:10.000Z"
+    }
+  ]
+}

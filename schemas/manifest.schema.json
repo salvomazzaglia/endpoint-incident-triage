@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ManifestDocument",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "package_id",
+    "algorithm",
+    "entries",
+    "manifest_scope"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "generated_at_utc": { "type": "string" },
+    "package_id": { "type": "string" },
+    "algorithm": { "enum": ["sha256"] },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["relative_path", "size_bytes", "sha256", "artifact_type"],
+        "properties": {
+          "relative_path": { "type": "string" },
+          "size_bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "artifact_type": { "type": "string" },
+          "collector_id": { "type": ["string", "null"] },
+          "created_at_utc": { "type": "string" }
+        }
+      }
+    },
+    "manifest_scope": { "type": "string" },
+    "excluded_paths": { "type": "array", "items": { "type": "string" } },
+    "generator_version": { "type": "string" }
+  },
+  "additionalProperties": true
+}

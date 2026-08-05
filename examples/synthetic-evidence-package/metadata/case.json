@@ -1,0 +1,22 @@
+{
+  "case_id": "SYNTHETIC-DEMO-01",
+  "collection_id": "895130b6-9c43-46d6-b5ef-16d2c4236098",
+  "authorization_reference": "SYNTHETIC-AUTH",
+  "operator_label": "SYNTHETIC-COLLECTOR",
+  "collection_reason": "Synthetic demonstration collection",
+  "target_label": "SYNTHETIC-ENDPOINT-01",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "source_mode": "synthetic",
+  "platform": "windows",
+  "tool_version": "1.0.0",
+  "profile": "standard",
+  "limitations": [
+    "Live-response collection is non-destructive and minimally invasive, not perfectly read-only.",
+    "This package is not a forensic image and does not include volatile memory.",
+    "A valid SHA-256 manifest proves consistency with the recorded manifest, not legal provenance.",
+    "The custody ledger is tamper-evident, not tamper-proof.",
+    "Heuristic findings require analyst review and are not malware verdicts.",
+    "SYNTHETIC DEMONSTRATION DATA — no real endpoint was inspected."
+  ]
+}

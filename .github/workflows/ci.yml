@@ -1,0 +1,181 @@
+# GitHub-hosted CI only — no self-hosted runners, no secrets, no pull_request_target.
+# Supply-chain note: actions use official major-version tags (@v4/@v5). Full commit-SHA
+# pinning remains a follow-up when SHAs can be verified offline against official repos.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ubuntu:
+    name: Ubuntu (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Install ShellCheck, shfmt, and Bats
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          curl -fsSL https://github.com/mvdan/sh/releases/download/v3.8.0/shfmt_v3.8.0_linux_amd64 -o shfmt
+          chmod +x shfmt
+          sudo mv shfmt /usr/local/bin/
+          git clone --depth 1 --branch v1.11.0 https://github.com/bats-core/bats-core.git /tmp/bats-core
+          sudo cp -r /tmp/bats-core/bin/bats /usr/local/bin/
+
+      - name: Bash syntax check
+        run: |
+          find collectors/linux scripts -name '*.sh' -print0 | xargs -0 -n1 bash -n
+
+      - name: ShellCheck
+        run: |
+          find collectors/linux scripts -name '*.sh' -print0 | xargs -0 shellcheck -x
+
+      - name: shfmt check
+        run: shfmt -d -i 2 -ci collectors/linux scripts
+
+      - name: Bats tests
+        run: bats tests/bats/
+
+      - name: Ruff lint
+        run: python -m ruff check src tests scripts
+
+      - name: Ruff format check
+        run: python -m ruff format --check src tests scripts
+
+      - name: mypy
+        run: python -m mypy src/endpoint_incident_triage
+
+      - name: pytest
+        run: python -m pytest tests/python --junitxml=test-results/junit.xml
+
+      - name: Generate synthetic demo data
+        run: python scripts/generate-demo-data.py
+
+      - name: Synthetic collect, verify, and report
+        run: |
+          python -m endpoint_incident_triage collect-synthetic \
+            --case-id SYNTHETIC-CI-01 \
+            --platform linux \
+            --output-directory temp/ci-synthetic \
+            --config config/demo.config.json
+          PKG=$(find temp/ci-synthetic -maxdepth 1 -type d -name 'case-*' | head -1)
+          python -m endpoint_incident_triage verify --package "$PKG"
+          python -m endpoint_incident_triage report \
+            --package "$PKG" \
+            --output-directory temp/ci-reports \
+            --format all \
+            --privacy-mode masked \
+            --config config/demo.config.json
+
+      - name: Repository guards
+        run: python -m pytest tests/python/test_repository_guards.py -q
+
+  windows:
+    name: Windows (Python ${{ matrix.python-version }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Install Pester and PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module -Name Pester -MinimumVersion 5.5.0 -MaximumVersion 5.99.0 -Force -Scope CurrentUser
+          Install-Module -Name PSScriptAnalyzer -MinimumVersion 1.21.0 -Force -Scope CurrentUser
+
+      - name: Parse PowerShell collectors
+        shell: pwsh
+        run: |
+          Get-ChildItem collectors/windows/*.ps1 | ForEach-Object {
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$null, [ref]$errors)
+            if ($errors) { throw "Parse errors in $($_.Name): $($errors -join '; ')" }
+          }
+
+      - name: PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          $results = Invoke-ScriptAnalyzer -Path collectors/windows -Recurse -Settings PSScriptAnalyzerSettings.psd1 -Severity Error, Warning
+          if ($results) {
+            $results | Format-Table -AutoSize
+            throw "PSScriptAnalyzer reported issues"
+          }
+
+      - name: Pester tests
+        shell: pwsh
+        run: Invoke-Pester -Path tests/pester -Output Detailed
+
+      - name: Ruff lint
+        run: python -m ruff check src tests scripts
+
+      - name: Ruff format check
+        run: python -m ruff format --check src tests scripts
+
+      - name: mypy
+        run: python -m mypy src/endpoint_incident_triage
+
+      - name: pytest
+        run: python -m pytest tests/python --junitxml=test-results/junit.xml
+
+      - name: Generate synthetic demo data
+        run: python scripts/generate-demo-data.py
+
+      - name: Synthetic collect, verify, and report
+        shell: pwsh
+        run: |
+          python -m endpoint_incident_triage collect-synthetic `
+            --case-id SYNTHETIC-CI-01 `
+            --platform windows `
+            --output-directory temp/ci-synthetic `
+            --config config/demo.config.json
+          $pkg = Get-ChildItem temp/ci-synthetic -Directory -Filter 'case-*' | Select-Object -First 1
+          python -m endpoint_incident_triage verify --package $pkg.FullName
+          python -m endpoint_incident_triage report `
+            --package $pkg.FullName `
+            --output-directory temp/ci-reports `
+            --format all `
+            --privacy-mode masked `
+            --config config/demo.config.json
+
+      - name: Repository guards
+        run: python -m pytest tests/python/test_repository_guards.py -q

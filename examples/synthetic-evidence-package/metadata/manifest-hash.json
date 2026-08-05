@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "algorithm": "sha256",
+  "manifest_relative_path": "manifests/manifest.json",
+  "manifest_sha256": "0954e1fb837017d131bc4f9a28731b54c389d8ce1aedf721630f3d0ecf27c472",
+  "generated_at_utc": "2026-08-05T20:52:56Z",
+  "note": "Excluded from manifest scope so the recorded hash can reference the final manifest without self-inclusion. Also recorded in the custody ledger."
+}

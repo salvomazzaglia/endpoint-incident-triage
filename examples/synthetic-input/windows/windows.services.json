@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "artifact_type": "service",
+      "record_type": "service",
+      "name": "WinDefend",
+      "display_name": "Synthetic Windows Defender Service",
+      "state": "Running",
+      "start_mode": "Auto",
+      "path_name": "\"C:\\Program Files\\Windows Defender\\MsMpEng.exe\"",
+      "service_account": "LocalSystem",
+      "binary_dir_writable": false
+    },
+    {
+      "artifact_type": "service",
+      "record_type": "service",
+      "name": "SynEvilSvc",
+      "display_name": "Synthetic Writable Service Example",
+      "state": "Stopped",
+      "start_mode": "Manual",
+      "path_name": "\"C:\\Users\\synthetic-user\\AppData\\Local\\synthetic-writable\\evil-svc.exe\" --synthetic",
+      "service_account": "synthetic-service",
+      "binary_dir_writable": true,
+      "recently_created": true
+    }
+  ]
+}

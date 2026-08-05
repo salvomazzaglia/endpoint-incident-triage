@@ -1,0 +1,90 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+test-results/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Build
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Local / generated evidence (never commit real packages)
+evidence/
+cases/
+reports/
+packages/
+diagnostics/
+local/
+temp/
+tmp/
+downloads/
+*.zip
+*.zip.sha256
+*.evidence
+*.case
+*.manifest.local.json
+*.custody.local.jsonl
+
+# Forensic / sensitive artifacts
+*.evtx
+*.etl
+*.dmp
+*.raw
+*.mem
+*.img
+*.dd
+*.E01
+*.aff4
+*.pcap
+*.pcapng
+NTUSER.DAT
+SAM
+SECURITY
+SYSTEM
+SOFTWARE
+
+# Credentials and secrets
+.credentials
+.credentials_rsaparams
+.runner
+.env
+.env.*
+*.token
+*.secret
+*.key
+*.pem
+*.pfx
+*.p12
+*.cer
+*.crt
+
+# Local config overrides
+config/local.config.json
+config/local-profiles.json
+config/local-rules.json
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini

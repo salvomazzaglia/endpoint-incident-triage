@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.defender_status",
+  "platform": "windows",
+  "category": "security",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 0,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 2,
+  "records": [
+    {
+      "artifact_type": "security_tool",
+      "record_type": "defender_status",
+      "available": true,
+      "antivirus_enabled": true,
+      "antispyware_enabled": true,
+      "real_time_protection_enabled": true,
+      "on_access_protection_enabled": true,
+      "product_version": "4.18.25070.5-synthetic",
+      "engine_version": "1.1.25070.5-synthetic",
+      "antivirus_signature_age": 1,
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "record_type": "defender_preference",
+      "cloud_protection": 2,
+      "submit_samples_consent": 1,
+      "disable_realtime_monitoring": false,
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/defender-status.ps1",
+    "fixture=windows.defender_status.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

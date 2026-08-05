@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "artifact_type": "scheduled_task",
+      "record_type": "systemd_timer",
+      "unit": "synthetic-maint.timer",
+      "load_state": "loaded",
+      "active_state": "active",
+      "next_elapse_utc": "2026-08-06T03:00:00.000Z",
+      "last_trigger_utc": "2026-08-05T03:00:00.000Z"
+    }
+  ]
+}

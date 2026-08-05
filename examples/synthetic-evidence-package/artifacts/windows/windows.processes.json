@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.processes",
+  "platform": "windows",
+  "category": "execution",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 15,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 3,
+  "records": [
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 4,
+      "name": "System",
+      "session_id": 0,
+      "path": "C:\\Windows\\System32\\ntoskrnl.exe",
+      "parent_pid": 0,
+      "start_time_utc": "2026-08-05T06:00:00.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 892,
+      "name": "svchost",
+      "session_id": 0,
+      "path": "C:\\Windows\\System32\\svchost.exe",
+      "parent_pid": 684,
+      "start_time_utc": "2026-08-05T06:00:05.000Z"
+    },
+    {
+      "artifact_type": "process",
+      "record_type": "process",
+      "pid": 4512,
+      "name": "payload",
+      "session_id": 1,
+      "path": "C:\\Users\\synthetic-user\\AppData\\Local\\Temp\\synthetic-example\\payload.exe",
+      "parent_pid": 1200,
+      "start_time_utc": "2026-08-05T17:55:00.000Z"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/processes.ps1",
+    "fixture=windows.processes.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

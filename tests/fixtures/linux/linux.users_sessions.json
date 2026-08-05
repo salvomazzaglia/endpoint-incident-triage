@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "record_type": "interactive_session",
+      "user": "synthetic-user",
+      "tty": "pts/0",
+      "source_address": "198.51.100.20",
+      "login_time_utc": "2026-08-05T08:00:00.000Z",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    },
+    {
+      "record_type": "login_history",
+      "user": "synthetic-admin",
+      "source_address": "203.0.113.30",
+      "login_time_utc": "2026-08-05T07:00:00.000Z",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ]
+}

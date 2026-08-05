@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "artifact_type": "ssh_key_metadata",
+      "record_type": "authorized_keys_file",
+      "username": "synthetic-user",
+      "path": "/home/synthetic-user/.ssh/authorized_keys",
+      "source": "user_home",
+      "size_bytes": 128,
+      "mode": "0o666",
+      "mode_octal": 666,
+      "modified_time_utc": "2026-08-05T10:00:00.000Z"
+    },
+    {
+      "artifact_type": "ssh_key_metadata",
+      "record_type": "authorized_key_entry",
+      "username": "synthetic-user",
+      "path": "/home/synthetic-user/.ssh/authorized_keys",
+      "line_number": 1,
+      "key_type": "ssh-ed25519",
+      "comment": "synthetic-demo-key-no-material",
+      "fingerprint_present": true,
+      "key_material_length": 68
+    }
+  ]
+}

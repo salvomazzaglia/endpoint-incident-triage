@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "collector_id": "windows.autoruns",
+  "platform": "windows",
+  "category": "persistence",
+  "status": "Collected",
+  "started_at_utc": "2026-08-05T20:52:56Z",
+  "completed_at_utc": "2026-08-05T20:52:56Z",
+  "duration_ms": 0,
+  "privilege_state": "standard",
+  "source_mode": "fixture",
+  "record_count": 2,
+  "records": [
+    {
+      "artifact_type": "autorun",
+      "record_type": "autorun",
+      "location": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "SyntheticUpdater",
+      "command": "C:\\Program Files\\Synthetic\\updater.exe /check",
+      "source": "registry_run",
+      "target_exists": true
+    },
+    {
+      "artifact_type": "autorun",
+      "record_type": "autorun",
+      "location": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "SyntheticGhost",
+      "command": "C:\\Users\\synthetic-user\\AppData\\Local\\removed\\ghost.exe",
+      "source": "registry_run",
+      "target_exists": false,
+      "recently_created": true
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "truncation": {
+    "truncated": false,
+    "reason": null,
+    "original_bytes": null,
+    "retained_bytes": null,
+    "original_records": null,
+    "retained_records": null
+  },
+  "sensitive_fields_omitted": [],
+  "command_provenance": [
+    "interpreter=powershell",
+    "script=windows/autoruns.ps1",
+    "fixture=windows.autoruns.json"
+  ],
+  "collector_version": "1.0.0",
+  "exit_code": 0
+}

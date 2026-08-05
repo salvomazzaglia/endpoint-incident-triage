@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "record_type": "system_context",
+      "hostname": "SYNTHETIC-ENDPOINT-01",
+      "fqdn": "synthetic-endpoint-01.synthetic.invalid",
+      "platform": "Linux-6.8.0-synthetic-x86_64",
+      "system": "Linux",
+      "release": "6.8.0-synthetic",
+      "version": "#1 SMP Synthetic",
+      "machine": "x86_64",
+      "processor": "Synthetic CPU",
+      "os_pretty_name": "Synthetic Linux 24.04",
+      "os_id": "synthetic-linux",
+      "os_version_id": "24.04",
+      "mac_address": "02:00:5e:00:53:01",
+      "collected_at_utc": "2026-08-05T18:00:00.000Z"
+    }
+  ]
+}

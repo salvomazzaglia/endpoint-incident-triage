@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "record_type": "recent_file",
+      "path": "C:\\Users\\synthetic-user\\AppData\\Local\\Temp\\synthetic-example\\payload.exe",
+      "name": "payload.exe",
+      "size_bytes": 4096,
+      "created_time_utc": "2026-08-05T17:50:00.000Z",
+      "modified_time_utc": "2026-08-05T17:55:00.000Z",
+      "extension": ".exe",
+      "search_root": "C:\\Users\\synthetic-user\\AppData\\Local\\Temp"
+    },
+    {
+      "record_type": "collection_summary",
+      "since_utc": "2026-08-04T18:00:00.000Z",
+      "max_files": 50,
+      "max_depth": 2,
+      "collected": 1
+    }
+  ]
+}

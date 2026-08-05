@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>endpoint-incident-triage triage report</title>
+<style>
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1a1f36;
+  --muted: #5b647a;
+  --border: #d8deea;
+  --accent: #1f4fd8;
+  --warn-bg: #fff6db;
+  --warn-text: #7a5b00;
+  --synthetic-bg: #fff0f0;
+  --synthetic-text: #8a1f1f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+header, main, footer { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+header h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+header p { margin: 0; color: var(--muted); }
+.banner {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+.banner.synthetic { background: var(--synthetic-bg); color: var(--synthetic-text); }
+.banner.privacy { background: var(--warn-bg); color: var(--warn-text); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.card .label { color: var(--muted); font-size: 0.85rem; }
+.card .value { font-size: 1.2rem; font-weight: 600; }
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+section h2 { margin-top: 0; font-size: 1.1rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.45rem 0.35rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { color: var(--muted); font-weight: 600; }
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.sev-critical { background: #fde8e8; color: #a11b1b; }
+.sev-high { background: #fff0e6; color: #9a3d00; }
+.sev-medium { background: #fff6db; color: #9a6b00; }
+.sev-low { background: #eef4ff; color: #1f4fd8; }
+.sev-info { background: #eef1f6; color: #4b5565; }
+footer { color: var(--muted); font-size: 0.85rem; padding-bottom: 2rem; }
+@media (max-width: 640px) {
+  table { font-size: 0.82rem; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>endpoint-incident-triage — Triage Report</h1>
+  <p>Version 1.0.0 · Package synthetic-evidence-package · Generated 2026-08-05T20:52:57Z</p>
+</header>
+<main>
+  
+        <div class="banner synthetic" role="status">
+          <strong>SYNTHETIC DEMONSTRATION DATA — This report contains synthetic endpoint-triage data created exclusively for demonstration, testing, and documentation purposes.</strong>
+        </div>
+        
+  <div class="banner privacy" role="note">
+    <strong>Privacy notice:</strong> Heuristic findings are advisory only and require analyst review. This report does not confirm malware, compromise, or a clean endpoint. Integrity verification confirms consistency with recorded manifests and custody records, not legal provenance or completeness.
+    Privacy mode: masked.
+  </div>
+  <div class="cards"><div class='card'><div class='label'>Report status</div><div class='value'>Complete</div></div><div class='card'><div class='label'>Integrity</div><div class='value'>Verified</div></div><div class='card'><div class='label'>Custody</div><div class='value'>Verified</div></div><div class='card'><div class='label'>Findings</div><div class='value'>5</div></div><div class='card'><div class='label'>Highest severity</div><div class='value'>High</div></div><div class='card'><div class='label'>Collectors</div><div class='value'>12</div></div></div>
+  <section>
+    <h2>Case summary</h2>
+    <p><strong>Case ID:</strong> SYNTHETIC-DEMO-01</p>
+    <p><strong>Target:</strong> SYNTHETIC-ENDPOINT-01</p>
+    <p><strong>Platform:</strong> windows</p>
+    <p><strong>Source mode:</strong> synthetic</p>
+  </section>
+  <section>
+    <h2>Collectors</h2>
+    <table>
+      <thead><tr><th>Collector</th><th>Platform</th><th>Status</th><th>Records</th><th>Duration ms</th></tr></thead>
+      <tbody><tr><td>windows.autoruns</td><td>windows</td><td>Collected</td><td>2</td><td>0</td></tr><tr><td>windows.defender_status</td><td>windows</td><td>Collected</td><td>2</td><td>0</td></tr><tr><td>windows.event_log_summary</td><td>windows</td><td>Collected</td><td>4</td><td>15</td></tr><tr><td>windows.network_connections</td><td>windows</td><td>Collected</td><td>3</td><td>0</td></tr><tr><td>windows.processes</td><td>windows</td><td>Collected</td><td>3</td><td>15</td></tr><tr><td>windows.recent_file_metadata</td><td>windows</td><td>Collected</td><td>2</td><td>0</td></tr><tr><td>windows.scheduled_tasks</td><td>windows</td><td>Collected</td><td>2</td><td>16</td></tr><tr><td>windows.services</td><td>windows</td><td>Collected</td><td>2</td><td>0</td></tr><tr><td>windows.system_context</td><td>windows</td><td>Collected</td><td>1</td><td>16</td></tr><tr><td>windows.time_context</td><td>windows</td><td>Collected</td><td>1</td><td>0</td></tr><tr><td>windows.users_sessions</td><td>windows</td><td>Collected</td><td>3</td><td>16</td></tr><tr><td>windows.wmi_persistence</td><td>windows</td><td>Collected</td><td>3</td><td>16</td></tr></tbody>
+    </table>
+  </section>
+  <section>
+    <h2>Findings (heuristic, advisory)</h2>
+    <table>
+      <thead><tr><th>Severity</th><th>Title</th><th>Advisory</th><th>Platform</th><th>Entity</th></tr></thead>
+      <tbody><tr><td><span class='badge sev-high'>High</span></td><td>Unknown WMI permanent event subscription</td><td>Requires review</td><td>windows</td><td>2</td></tr><tr><td><span class='badge sev-high'>High</span></td><td>Service executable in unexpected writable location</td><td>Potentially suspicious</td><td>windows</td><td>SynEvilSvc</td></tr><tr><td><span class='badge sev-medium'>Medium</span></td><td>Autorun entry references missing target</td><td>Requires review</td><td>windows</td><td>SyntheticGhost</td></tr><tr><td><span class='badge sev-medium'>Medium</span></td><td>Process executing from temporary directory</td><td>Requires review</td><td>windows</td><td>4512</td></tr><tr><td><span class='badge sev-medium'>Medium</span></td><td>Scheduled task references missing executable</td><td>Requires review</td><td>windows</td><td>1</td></tr></tbody>
+    </table>
+  </section>
+  <section>
+    <h2>Timeline preview</h2>
+    <p>Events: 0</p>
+    <p>First: n/a</p>
+    <p>Last: n/a</p>
+  </section>
+  <section>
+    <h2>Limitations</h2>
+    <ul><li>Live-response collection is non-destructive and minimally invasive, not perfectly read-only.</li><li>This package is not a forensic image and does not include volatile memory.</li><li>A valid SHA-256 manifest proves consistency with the recorded manifest, not legal provenance.</li><li>The custody ledger is tamper-evident, not tamper-proof.</li><li>Heuristic findings require analyst review and are not malware verdicts.</li><li>SYNTHETIC DEMONSTRATION DATA — no real endpoint was inspected.</li></ul>
+  </section>
+</main>
+<footer>
+  Exit code 0 — endpoint-incident-triage 1.0.0.
+  Heuristic findings require analyst validation; no malware verdict is implied.
+</footer>
+</body>
+</html>
