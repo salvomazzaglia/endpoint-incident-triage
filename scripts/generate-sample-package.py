@@ -11,7 +11,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TEMP_ROOT = REPO_ROOT / "temp" / "package-build"
 PUBLIC_PACKAGE = REPO_ROOT / "examples" / "synthetic-evidence-package"
-CASE_ID = "SYNTHETIC-DEMO-01"
+CASE_ID = "SYNTHETIC-CASE-001"
 CONFIG = "config/demo.config.json"
 
 

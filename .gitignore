@@ -24,15 +24,16 @@ build/
 *.egg
 
 # Local / generated evidence (never commit real packages)
-evidence/
-cases/
-reports/
-packages/
-diagnostics/
-local/
-temp/
-tmp/
-downloads/
+# Anchored to repository root so examples/synthetic-evidence-package/reports/ remains trackable.
+/evidence/
+/cases/
+/reports/
+/packages/
+/diagnostics/
+/local/
+/temp/
+/tmp/
+/downloads/
 *.zip
 *.zip.sha256
 *.evidence

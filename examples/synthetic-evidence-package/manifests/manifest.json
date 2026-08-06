@@ -1,152 +1,152 @@
 {
   "schema_version": "1.0.0",
-  "generated_at_utc": "2026-08-05T20:52:56Z",
-  "package_id": "case-SYNTHETIC-DEMO-01-20260805T180000Z",
+  "generated_at_utc": "2026-08-06T01:26:23Z",
+  "package_id": "case-SYNTHETIC-CASE-001-20260805T180000Z",
   "algorithm": "sha256",
   "entries": [
     {
       "relative_path": "README.txt",
-      "size_bytes": 1031,
-      "sha256": "f829f4eefb63978f197ef2096c5c242e78af0429c0e09373b8fbd449d3eb2b7c",
+      "size_bytes": 1033,
+      "sha256": "b0bbc07f11d48effa79e83e3e5484fce5059eff0cfd893fa580743cb449c1536",
       "artifact_type": "readme",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.autoruns.json",
       "size_bytes": 1526,
-      "sha256": "c855b8ee3c39491176b38fa69eac228dafa6bfec98df52119028f84b890c5067",
+      "sha256": "be659785db3f2cb0b3b6212e8d6071cee7ed0611861eb9bb31d80a155f5c6e3b",
       "artifact_type": "collector_result",
       "collector_id": "windows.autoruns",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.defender_status.json",
       "size_bytes": 1544,
-      "sha256": "3a62bde10ab7ecd8c9337f9578f69e94f0c1f74673d6713a47419d7449e492ae",
+      "sha256": "ede79a4318a99e8b25d7e4c82082170dc6c2953549b9970f2e3c6270262c60ac",
       "artifact_type": "collector_result",
       "collector_id": "windows.defender_status",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.event_log_summary.json",
-      "size_bytes": 1814,
-      "sha256": "d72b5973f808e1f1ca76c097236aa20cce8eee83053b8f3579db58fb0f345f6e",
+      "size_bytes": 1813,
+      "sha256": "408fdd37aa7a0d5683cfc972f066ff9877dab999d426d6d563f915e1384f0a59",
       "artifact_type": "collector_result",
       "collector_id": "windows.event_log_summary",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.network_connections.json",
       "size_bytes": 1763,
-      "sha256": "f1ad4f37828a433a2448bfb6b0036e9d042c5c2b4a79568639d2a3733f94bf8f",
+      "sha256": "c23165ca79261f39b143f9e8a6648afa0cabff99fe3ffdc00a35fbe04bf96973",
       "artifact_type": "collector_result",
       "collector_id": "windows.network_connections",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.processes.json",
-      "size_bytes": 1719,
-      "sha256": "2ab46212b7c8ed66a37a87ed01bda83ebfebd730403376f0276321da75cea2a4",
+      "size_bytes": 1718,
+      "sha256": "245edb53cb7ea8717d267590f65e9d39736fb73c20c070a9a6cf9f348ffa5109",
       "artifact_type": "collector_result",
       "collector_id": "windows.processes",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.recent_file_metadata.json",
       "size_bytes": 1454,
-      "sha256": "cf399fbafb32d1c3c4f631e7d781324e0ddf44ad86da2631af9cfcfbba9bf710",
+      "sha256": "f69557aa2775022ee0325bb9b7244fe3a138eca55f87ff15a9b07db3e968a653",
       "artifact_type": "collector_result",
       "collector_id": "windows.recent_file_metadata",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.scheduled_tasks.json",
-      "size_bytes": 1938,
-      "sha256": "9360b23f392d8b49b2df1a1a48743f6f0fdcb94d03586c54882be21821d52e44",
+      "size_bytes": 1937,
+      "sha256": "b2ce1c4b2b9502735dd3f7caf20e868fb733112aed8df483e07bcfedc2e6a36a",
       "artifact_type": "collector_result",
       "collector_id": "windows.scheduled_tasks",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.services.json",
       "size_bytes": 1667,
-      "sha256": "5421b652543e0ffe193d603eefcf4887183afa500e4f0cd463a1b101d85283be",
+      "sha256": "be7808b82a46e2326a97d7131f6cbebb817474f0ffdf2b19a2b6d6dffb236c70",
       "artifact_type": "collector_result",
       "collector_id": "windows.services",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.system_context.json",
-      "size_bytes": 1380,
-      "sha256": "8f81c34ede4876b36f748bbddbbbce78a04cd48bdc5556d393aab81a3eafb2c4",
+      "size_bytes": 1379,
+      "sha256": "ae949a41eafc26c7b4d57abe0fd5e977c29994b678c6540db4df2285f8b7ec61",
       "artifact_type": "collector_result",
       "collector_id": "windows.system_context",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.time_context.json",
       "size_bytes": 1206,
-      "sha256": "bd95d2fdae43bfa195ea0507c271d2ce06a1c0368f8c26381e24c3482050a596",
+      "sha256": "c9f31254cf7c4728be5f72fc6ae97382f3f7492f9301ddcb4e0262caf5949af4",
       "artifact_type": "collector_result",
       "collector_id": "windows.time_context",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.users_sessions.json",
-      "size_bytes": 1546,
-      "sha256": "677d1a8eb399ac90f3a04be188aa954ecd2e771c45b82471b832d0594cfd6311",
+      "size_bytes": 1545,
+      "sha256": "9a4ee5b31164b0bf6e60424198128430595c57093de8ee5d9af7fa5ccb6f1749",
       "artifact_type": "collector_result",
       "collector_id": "windows.users_sessions",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "artifacts/windows/windows.wmi_persistence.json",
       "size_bytes": 1560,
-      "sha256": "446c86f42f2f54bab5a2aab578c53854349fcceaecf5e15a42c0be77c360bffb",
+      "sha256": "aaa3be9db1461842d10bfb615a7f4d5585a8fbb4c6044b419e43c92d117a7008",
       "artifact_type": "collector_result",
       "collector_id": "windows.wmi_persistence",
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "custody/custody.jsonl",
-      "size_bytes": 14883,
-      "sha256": "06799115b6302910fcf00b066b66072dbcbeb55a33f47d8ab671bfbaefde9768",
+      "size_bytes": 14912,
+      "sha256": "b124f59c3f21d4c92a532ea7096cf629f579babfb32c41249d73665759923069",
       "artifact_type": "custody",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "findings/findings.json",
       "size_bytes": 7319,
-      "sha256": "7165b6ae5947e24f1f4db8cc2ec75846a22e4e4866e61f1637ee367975b7d022",
+      "sha256": "f98a921312de35bbc881c85f14d04f40b27a7886797bf577e2d1457bb6604d08",
       "artifact_type": "findings",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "logs/collector-execution.jsonl",
       "size_bytes": 3812,
-      "sha256": "1d5fa4c7363b94b53bf6e972d8ea757bed5b04bdc0dcb85368048badc3f24e87",
+      "sha256": "ac356c133d8cb30acc48dea5a93c4103f42d836185af5c47392160062991af43",
       "artifact_type": "log",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "metadata/case.json",
-      "size_bytes": 1029,
-      "sha256": "9f8b24eb655c2f653620d6713172e1da3bddbb4fa619e8665248ac46c5ebc420",
+      "size_bytes": 1030,
+      "sha256": "93d90ecc1f5c12490e37154dc72b53827226046c57158ae3fab44a3c42823cab",
       "artifact_type": "metadata",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "metadata/collection.json",
       "size_bytes": 798,
-      "sha256": "e82a3db66e9da46cca8ee17e880fd80ab628e28cf23f714513c91a0c7d94d362",
+      "sha256": "b8c2d0b40233080f4eb6423bd97d62ee31787ea2b8f343cc70b604f9c6d08bcc",
       "artifact_type": "metadata",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "metadata/host-context.json",
@@ -154,15 +154,15 @@
       "sha256": "9959a2ee3f3c1668c93e0650457e7220852d391aad38f2e38d560907ee8cdfa0",
       "artifact_type": "metadata",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "metadata/tool.json",
       "size_bytes": 154,
-      "sha256": "960ebb37d72e412fba82b484e947d49aaaee8b83ebd125925ef8be262b110cc5",
+      "sha256": "53322619a55cb957c26475b1ebd3df04912648830d22b2efe902539bc5bcf981",
       "artifact_type": "metadata",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "reports/README.txt",
@@ -170,7 +170,7 @@
       "sha256": "8c8dfbc813321858fa696753ad84047e948708023174c0fcae38f78bc378373c",
       "artifact_type": "report",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     },
     {
       "relative_path": "timeline/timeline.jsonl",
@@ -178,7 +178,7 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "artifact_type": "timeline",
       "collector_id": null,
-      "created_at_utc": "2026-08-05T20:52:56Z"
+      "created_at_utc": "2026-08-06T01:26:23Z"
     }
   ],
   "manifest_scope": "package",

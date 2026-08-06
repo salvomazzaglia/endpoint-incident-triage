@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "findings": [
     {
-      "id": "30d2e533-9b8f-4409-b933-7af615c0705b",
+      "id": "c26e912e-c6be-467c-ab16-0d89f3623915",
       "rule_id": "wmi_permanent_subscription",
       "title": "Unknown WMI permanent event subscription",
       "description": "A permanent WMI event subscription was observed.",
@@ -21,7 +21,7 @@
       "source_artifact": "artifacts/windows/windows.wmi_persistence.json"
     },
     {
-      "id": "8982f407-e01d-4a1b-8693-412e0fe6b268",
+      "id": "760f7541-d723-4a90-a6ef-1e0f6553f0e4",
       "rule_id": "writable_service_binary_path",
       "title": "Service executable in unexpected writable location",
       "description": "A service references an executable whose directory appears writable by non-administrators.",
@@ -40,7 +40,7 @@
       "source_artifact": "artifacts/windows/windows.services.json"
     },
     {
-      "id": "80078961-afb6-4e86-908e-217a31113b65",
+      "id": "4273d3bb-9986-4067-b3e8-6dcb2bc14b9b",
       "rule_id": "autorun_missing_target",
       "title": "Autorun entry references missing target",
       "description": "A Run key or startup folder entry references a file that is not present.",
@@ -59,7 +59,7 @@
       "source_artifact": "artifacts/windows/windows.autoruns.json"
     },
     {
-      "id": "76038757-0867-4e16-9184-8a99f5ca0109",
+      "id": "dc6278fe-fecf-434a-be42-b31946b645f9",
       "rule_id": "process_from_temp_path",
       "title": "Process executing from temporary directory",
       "description": "A running process image path resides under a temporary or user-writable directory.",
@@ -80,7 +80,7 @@
       "source_artifact": "artifacts/windows/windows.processes.json"
     },
     {
-      "id": "b86be21b-9c49-4d96-9bcc-9363d23fee7d",
+      "id": "986dbbfc-d5a1-4085-842a-091472efc3f6",
       "rule_id": "scheduled_task_missing_target",
       "title": "Scheduled task references missing executable",
       "description": "A scheduled task action points to a path that does not exist.",
@@ -99,7 +99,7 @@
       "source_artifact": "artifacts/windows/windows.scheduled_tasks.json"
     },
     {
-      "id": "bae79357-750a-4ab6-a590-e3656f4561b1",
+      "id": "722d5783-ad9f-40a2-91f1-cc6f7618d128",
       "rule_id": "listen_all_interfaces",
       "title": "Listening service on all interfaces",
       "description": "A network listener is bound to all interfaces rather than localhost.",
@@ -118,7 +118,7 @@
       "source_artifact": "artifacts/windows/windows.network_connections.json"
     },
     {
-      "id": "68ff0c3e-4341-45ea-adad-345ab8e8def7",
+      "id": "68001d35-b96b-4cdf-a3e2-6a74706b5db3",
       "rule_id": "recent_persistence_metadata",
       "title": "Recently created persistence metadata",
       "description": "Persistence metadata indicates a very recent creation timestamp.",
@@ -137,7 +137,7 @@
       "source_artifact": "artifacts/windows/windows.wmi_persistence.json"
     },
     {
-      "id": "a1d49711-c820-4167-9250-f4ae9b4f645a",
+      "id": "976d92cf-b5c0-4768-94f8-912229b768b8",
       "rule_id": "recent_persistence_metadata",
       "title": "Recently created persistence metadata",
       "description": "Persistence metadata indicates a very recent creation timestamp.",
@@ -156,7 +156,7 @@
       "source_artifact": "artifacts/windows/windows.services.json"
     },
     {
-      "id": "d7110384-8ed6-412a-a53c-7020742ebb2e",
+      "id": "f1569e8e-dab9-4601-9455-3219e1643f02",
       "rule_id": "recent_persistence_metadata",
       "title": "Recently created persistence metadata",
       "description": "Persistence metadata indicates a very recent creation timestamp.",
