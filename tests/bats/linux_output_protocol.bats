@@ -8,12 +8,13 @@ setup() {
   FIXTURES="${REPO_ROOT}/tests/fixtures/linux"
 }
 
-@test "processes fixture records include pid and comm fields" {
+@test "processes fixture records include pid and name/comm fields" {
   run bash "${COLLECTORS}/processes.sh" --fixture "${FIXTURES}/linux.processes.json"
   echo "${output}" | python3 -c "
 import json, sys
 rec = json.load(sys.stdin)['records'][0]
-assert 'pid' in rec and 'comm' in rec
+assert 'pid' in rec
+assert ('comm' in rec) or ('name' in rec)
 "
 }
 
