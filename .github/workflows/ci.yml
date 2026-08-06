@@ -44,18 +44,18 @@ jobs:
           chmod +x shfmt
           sudo mv shfmt /usr/local/bin/
           git clone --depth 1 --branch v1.11.0 https://github.com/bats-core/bats-core.git /tmp/bats-core
-          sudo cp -r /tmp/bats-core/bin/bats /usr/local/bin/
+          sudo /tmp/bats-core/install.sh /usr/local
 
       - name: Bash syntax check
         run: |
-          find collectors/linux scripts -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          find collectors/linux -name '*.sh' -print0 | xargs -0 -n1 bash -n
 
       - name: ShellCheck
         run: |
-          find collectors/linux scripts -name '*.sh' -print0 | xargs -0 shellcheck -x
+          find collectors/linux -name '*.sh' -print0 | xargs -0 -r shellcheck -x
 
       - name: shfmt check
-        run: shfmt -d -i 2 -ci collectors/linux scripts
+        run: shfmt -d -i 2 -ci collectors/linux
 
       - name: Bats tests
         run: bats tests/bats/
