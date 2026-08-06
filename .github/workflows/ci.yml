@@ -143,7 +143,12 @@ jobs:
 
       - name: Pester tests
         shell: pwsh
-        run: Invoke-Pester -Path tests/pester -Output Detailed
+        run: |
+          $cfg = New-PesterConfiguration
+          $cfg.Run.Path = 'tests/pester'
+          $cfg.Run.Exit = $true
+          $cfg.Output.Verbosity = 'Detailed'
+          Invoke-Pester -Configuration $cfg
 
       - name: Ruff lint
         run: python -m ruff check src tests scripts
