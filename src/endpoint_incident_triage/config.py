@@ -31,6 +31,17 @@ class ConfigError(ValueError):
     """Invalid configuration."""
 
 
+def _looks_absolute_path(value: str) -> bool:
+    """Reject POSIX absolutes, Windows drive paths, and UNC paths on every OS."""
+    if Path(value).is_absolute():
+        return True
+    normalized = value.replace("\\", "/")
+    if normalized.startswith("/") or normalized.startswith("//"):
+        return True
+    # Drive-letter paths are absolute on Windows but relative on POSIX pathlib.
+    return len(normalized) >= 2 and normalized[0].isalpha() and normalized[1] == ":"
+
+
 @dataclass(slots=True)
 class CollectionDefaults:
     profile: str = "minimal"
@@ -182,7 +193,7 @@ def validate_config_dict(data: dict[str, Any], *, base_dir: Path) -> AppConfig:
         value = paths_raw.get(key, default)
         if not isinstance(value, str) or not value:
             raise ConfigError(f"paths.{key} must be a non-empty string")
-        if Path(value).is_absolute():
+        if _looks_absolute_path(value):
             raise ConfigError(f"paths.{key} must be relative: {value}")
         if ".." in Path(value).parts:
             raise ConfigError(f"paths.{key} must not contain traversal: {value}")

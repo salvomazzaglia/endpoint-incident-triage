@@ -71,10 +71,19 @@ def test_config_rejects_timeout_over_max(tmp_path: Path):
         validate_config_dict(data, base_dir=repo_root())
 
 
-def test_config_rejects_absolute_paths(tmp_path: Path):
+@pytest.mark.parametrize(
+    "absolute_path",
+    [
+        "C:/Windows/System32/evil.json",
+        "C:\\Windows\\System32\\evil.json",
+        "/tmp/evil.json",
+        "//unc/share/evil.json",
+    ],
+)
+def test_config_rejects_absolute_paths(absolute_path: str, tmp_path: Path):
     data = minimal_config_dict(
         paths={
-            "collector_registry": "C:/Windows/System32/evil.json",
+            "collector_registry": absolute_path,
             "collection_profiles": "config/collection-profiles.json",
             "triage_rules": "config/triage-rules.json",
             "collectors_root": "collectors",

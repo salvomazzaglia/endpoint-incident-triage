@@ -7,7 +7,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from endpoint_incident_triage.config import MAX_OUTPUT_BYTES, MAX_TIMEOUT_SECONDS, ConfigError
+from endpoint_incident_triage.config import (
+    MAX_OUTPUT_BYTES,
+    MAX_TIMEOUT_SECONDS,
+    ConfigError,
+    _looks_absolute_path,
+)
 
 ALLOWED_INTERPRETERS = frozenset({"powershell", "bash"})
 ALLOWED_PRIVILEGES = frozenset({"standard", "elevated_optional", "elevated_preferred"})
@@ -98,7 +103,8 @@ def _parse_collector(item: dict[str, Any], collectors_root: Path) -> CollectorDe
     script_path = item["script_path"]
     _require(isinstance(script_path, str) and bool(script_path), "script_path must be string")
     _require(
-        not Path(script_path).is_absolute(), f"Absolute collector path rejected: {script_path}"
+        not _looks_absolute_path(script_path),
+        f"Absolute collector path rejected: {script_path}",
     )
     _require(".." not in Path(script_path).parts, f"Traversal in collector path: {script_path}")
 
