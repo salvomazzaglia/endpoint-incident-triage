@@ -25,6 +25,9 @@ def verified_copy(tmp_path: Path) -> Path:
     src = synthetic_package_dir()
     dest = tmp_path / "package"
     shutil.copytree(src, dest)
+    from tests.helpers.package_rehash import rehash_package_directory
+
+    rehash_package_directory(dest)
     return dest
 
 

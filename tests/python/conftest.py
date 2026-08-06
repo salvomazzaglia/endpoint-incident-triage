@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
 
 import pytest
@@ -11,6 +12,7 @@ from tests.helpers.factories import (
     repo_root,
     synthetic_package_dir,
 )
+from tests.helpers.package_rehash import rehash_package_directory
 
 
 @pytest.fixture(scope="session")
@@ -24,5 +26,10 @@ def demo_config() -> Path:
 
 
 @pytest.fixture(scope="session")
-def verified_synthetic_package() -> Path:
-    return synthetic_package_dir()
+def verified_synthetic_package(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    """Copy and rehash the public sample so Windows EOL checkout still verifies."""
+    src = synthetic_package_dir()
+    dest = tmp_path_factory.mktemp("synthetic-package") / "package"
+    shutil.copytree(src, dest)
+    rehash_package_directory(dest)
+    return dest

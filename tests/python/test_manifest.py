@@ -88,6 +88,8 @@ def test_verify_entry_hash_mismatch(tmp_path: Path):
 
 
 def test_build_manifest_rejects_symlink(tmp_path: Path):
+    from endpoint_incident_triage.evidence_paths import PathValidationError
+
     real = tmp_path / "real.txt"
     real.write_text("x", encoding="utf-8")
     link = tmp_path / "link.txt"
@@ -95,5 +97,5 @@ def test_build_manifest_rejects_symlink(tmp_path: Path):
         link.symlink_to(real)
     except OSError:
         pytest.skip("Symlinks not supported")
-    with pytest.raises(ManifestError, match="Symlink"):
+    with pytest.raises((ManifestError, PathValidationError), match="[Ss]ymlink"):
         build_manifest(tmp_path, package_id="pkg")

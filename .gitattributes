@@ -9,3 +9,12 @@
 *.ico binary
 *.zip binary
 *.pdf binary
+
+# Evidence packages and fixtures must keep LF so SHA-256 manifests stay portable.
+examples/** text eol=lf
+tests/fixtures/** text eol=lf
+collectors/linux/** text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.sh text eol=lf
+*.bats text eol=lf

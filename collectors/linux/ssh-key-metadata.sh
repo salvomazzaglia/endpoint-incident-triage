@@ -48,6 +48,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# Uniform CLI surface retained for orchestrator compatibility.
+: "${FIXTURE_PATH}" "${INCLUDE_COMMAND_LINES}" "${INCLUDE_EVENT_MESSAGES}" "${SINCE_HOURS}" "${MAX_EVENTS}" "${MAX_FILES}" "${MAX_DEPTH}"
+
 if [[ -n "${FIXTURE_PATH}" && -f "${FIXTURE_PATH}" ]]; then
   cat "${FIXTURE_PATH}"
   exit 0
